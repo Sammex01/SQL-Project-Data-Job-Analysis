@@ -49,7 +49,7 @@ ORDER BY
     salary_year_avg DESC
 LIMIT 10
 ```
-### 2. Skills Required for the Top Paying Jobs
+### 2. Skills Required for the Top Paying Data Analyst Roles
 Understanding the skills required for the top-paying **Data Analyst** roles helps identify what employers value most in today’s job market. By highlighting the technical and analytical capabilities linked to higher salaries, this section clarifies which competencies are essential for maximizing career opportunities.
 
 ```sql
@@ -78,9 +78,24 @@ INNER JOIN skills_job_dim USING (job_id)
 INNER JOIN skills_dim USING (skill_id)
 ORDER BY
     salary_year_avg DESC
-    ```
- 
-###3.  
- # What I Learned
+    
+```
 
- # Conclusions
+### 3. Top Paying Skills
+
+This section focuses on the skills that command the highest salaries in data analyst roles. By comparing compensation patterns across different tools and technologies, it highlights which technical competencies provide the strongest earning potential in the current job market.
+
+```sql
+
+SELECT 
+    skills,
+    ROUND(AVG(salary_year_avg), 0) as avg_salary
+    FROM job_postings_fact
+INNER JOIN skills_job_dim USING (job_id)
+INNER JOIN skills_dim USING (skill_id)
+WHERE job_title_short = 'Data Analyst' AND
+    salary_year_avg IS NOT NULL
+GROUP BY skills
+ORDER BY avg_salary DESC
+LIMIT 25
+```
