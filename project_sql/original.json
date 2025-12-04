@@ -1,64 +1,3 @@
--- Top paying job skills
-WITH top_paying_jobs AS (
-SELECT
-    job_id,
-    job_title,
-    salary_year_avg,
-    name AS company_name
-FROM
-    job_postings_fact
-LEFT JOIN company_dim USING (company_id)
-WHERE
-    job_title_short = 'Data Analyst' AND
-    job_location = 'Anywhere' AND
-    salary_year_avg IS NOT NULL
-ORDER BY
-    salary_year_avg DESC
-LIMIT 10
-)
-SELECT 
-    top_paying_jobs.*,
-    skills
-FROM top_paying_jobs
-INNER JOIN skills_job_dim USING (job_id)
-INNER JOIN skills_dim USING (skill_id)
-ORDER BY
-    salary_year_avg DESC
-
-
-/*
-The analysis of the skills column for the top 10 data analyst roles in 2023 reveals a clear hierarchy of required technical expertise.
-Top 10 Most Requested SkillsThe most in-demand skills, based on their frequency across the job postings, are:
-Rank    Skill   Count   Skill-Category
-1        SQL      8     Database/Query Language
-2      Python     7     Programming/Scripting
-3       Tableau   6     Data Visualization/BI
-4         R       4     Programming/Statistics
-5     Snowflake   3     Cloud Data Warehousing
-6       Pandas    3     Python Library/Data Manipulation
-7       Excel     3     Spreadsheet/Analysis Tool
-8       Azure     2     Cloud Computing
-9      Bitbucket  2     Version Control/DevOps
-10        Go      2     Programming/Backend
-
-Key Insights from the Skills AnalysisThe job market for top data analyst roles emphasizes a core set of skills that span data querying, programming, and visualization.
-1. The Core Data Analyst Stack (Top 3)
-The top three skills are essential for nearly any data analyst role:
-- SQL (8 Mentions): As the most frequently mentioned skill, SQL remains the foundational requirement for querying and manipulating data stored in databases.
-- Python (7 Mentions): The demand for Python highlights the need for analysts to move beyond simple querying into areas like statistical analysis, automation, and data cleaning, often utilizing libraries like Pandas.
-- Tableau (6 Mentions): This indicates a strong requirement for Business Intelligence (BI) and storytelling, as analysts must be able to visualize data and communicate insights effectively.
-
-2. Programming and Statistics
-Both Python and R are listed, confirming that strong programming skills are highly valued. Python's lead over R suggests a growing preference for a general-purpose language that can be used for both data analysis and integration with broader software systems. The inclusion of Pandas explicitly points to the need for proficiency in Python's data manipulation ecosystem.
-
-3. Cloud and Data Infrastructure
-Skills like Snowflake and Azure show a clear trend toward roles operating on modern, cloud-based data infrastructure. Analysts are increasingly expected to work with data warehouses and platforms in the cloud, rather than traditional on-premise solutions.
-
-4. Ancillary Tools
-The presence of Excel (3 mentions) suggests that while advanced tools are dominant, fundamental spreadsheet skills are still relevant for ad-hoc analysis and simple reporting. Tools like Bitbucket (a Git repository management tool) and Go indicate that some senior data analyst roles may require involvement in MLOps, DevOps, or closer collaboration with data engineers and software developers.
-
-The chart below visualizes the frequency of these top 10 skills:
-
 [
   {
     "job_id": 552322,
@@ -523,6 +462,3 @@ The chart below visualizes the frequency of these top 10 skills:
     "skills": "r"
   }
 ]
-
-*/ 
-
