@@ -23,11 +23,9 @@ During my analysis of the data Analyst  job market, I made use of several tools 
 - **Git and Github** - Ver essential for version control and sahring my SQL scripts and Analysis, ensuring smooth collaboration and proper project tracking
 
 
- # The Analysis
- ### 1. Top-Paying Data Analyst Jobs
- This analysis explores the top-paying **Data Analyst** roles to highlight where the strongest career opportunities exist. 
- By examining salaries, skills, and job demand, the goal is to reveal which positions offer the best value in today’s competitive data job market.
-
+ #  Analysis of Data Analyst Roles
+ ### 1. Top-Paying Remote Data Analyst Jobs
+This analysis highlights the top-paying remote Data Analyst roles in 2023 to reveal where the strongest earning opportunities exist. Leading the list is **Data Analyst** at Mantys (650,000 USD), followed by **Director of Analytics** at Meta (336,500 USD) and **Associate Director** – Data Insights at AT&T (255,830 USD). Other roles, including **Data Analyst**, **Marketing at Pinterest** and **Principal Data Analyst** at SmartAsset, offer salaries above 200,000 USD. 
  ```sql
  SELECT
     job_id,
@@ -49,7 +47,7 @@ ORDER BY
     salary_year_avg DESC
 LIMIT 10
 ```
-### 2. Skills Required for the Top Paying Data Analyst Roles
+### 2. Skills Required for Top Paying Data Analyst Roles
 Understanding the skills required for the top-paying **Data Analyst** roles helps identify what employers value most in today’s job market. By highlighting the technical and analytical capabilities linked to higher salaries, this section clarifies which competencies are essential for maximizing career opportunities.
 
 ```sql
@@ -81,21 +79,87 @@ ORDER BY
     
 ```
 
-### 3. Top Paying Skills
+### 3. Top 10 Paying Companies
+The average salary breakdown shows a clear gap led by **Mantys**, which pays far above all other companies. Close followers like **ЛАНИТ**, **Torc Robotics**, and **Illuminate Mission Solutions** also offer strong compensation, reflecting high demand for advanced data talent. Major tech names such as **Google**, **OpenAI**, and **Anthropic** remain competitive but fall below the premium salaries of more specialized firms. Overall, the chart highlights how industry focus and technical complexity strongly influence pay levels.
 
-This section focuses on the skills that command the highest salaries in data analyst roles. By comparing compensation patterns across different tools and technologies, it highlights which technical competencies provide the strongest earning potential in the current job market.
 
 ```sql
 
+WITH companies AS(
+    SELECT 
+    company_dim.name AS company_name,
+    job_title,
+    salary_year_avg AS avg_salary
+FROM
+    job_postings_fact
+LEFT JOIN
+    company_dim USING (company_id)
+WHERE
+    job_title_short = 'Data Analyst'
+    AND salary_year_avg IS NOT NULL
+ORDER BY
+    salary_year_avg DESC
+)
+SELECT
+    company_name,
+    ROUND(AVG(avg_salary), 0) AS avg_salary
+FROM
+    companies
+GROUP BY
+    company_name
+ORDER BY
+    avg_salary DESC
+LIMIT 10
+```
+### 4. Top 15 Paying Countries
+Average salaries vary widely across countries, with Belarus ($400k) and Russia ($292k) leading, followed by high-paying islands like the Bahamas ($201k). Developed markets such as the US ($126k), Canada ($123k), and Australia ($118k) offer competitive and reliable salaries, while emerging markets like India ($114k) and Brazil ($119k) provide moderate pay with growth opportunities. Targeting developed countries or high-paying niche markets can maximize both career opportunity and compensation.
+
+```sql
+SELECT
+    job_country,
+    ROUND (AVG(salary_year_avg), 0) AS avg_salary
+FROM
+    job_postings_fact
+WHERE
+    salary_year_avg IS NOT NULL AND
+    job_country IS NOT NULL
+GROUP BY
+    job_country
+ORDER BY
+    avg_salary DESC
+
+```
+
+### 5. Optimal Skills
+This analysis highlights the most in-demand and highest-paying technical skills in today’s job market. **Python** and **Tableau** lead in demand, offering abundant opportunities, while **AWS**, **Azure**, **Snowflake**, and **Hadoop** provide a strong balance of high pay and solid demand. Niche skills like **Go** and **Confluence** offer top-tier salaries but appear less frequently. Overall, cloud platforms and big data tools are the most strategic choices for career growth, while popular languages remain reliable for plentiful roles.
+
+```sql
+WITH skills_demand AS (
 SELECT 
+    skill_id,
     skills,
+    COUNT(job_id) AS demand_count,
     ROUND(AVG(salary_year_avg), 0) as avg_salary
     FROM job_postings_fact
 INNER JOIN skills_job_dim USING (job_id)
 INNER JOIN skills_dim USING (skill_id)
 WHERE job_title_short = 'Data Analyst' AND
-    salary_year_avg IS NOT NULL
-GROUP BY skills
-ORDER BY avg_salary DESC
+    salary_year_avg IS NOT NULL AND
+    job_work_from_home IS TRUE
+GROUP BY skill_id,
+         skills
+)
+SELECT
+    skill_id,
+    skills,
+    demand_count,
+    avg_salary
+FROM
+    skills_demand
+WHERE
+    demand_count>10
+ORDER BY
+        avg_salary DESC,
+        demand_count DESC
 LIMIT 25
 ```
