@@ -17,9 +17,69 @@ This project is my way of exploring that landscape—digging into job postings t
 
  # Tools I Used
 During my analysis of the data Analyst  job market, I made use of several tools such as
-- Sql: The backbone of the analysis, allowing me to query the database and find critial insights
-- PostgreSQL: This is the chosen database management where all the queries where run
-- Visual Studio Code - My favorite database management and ececution of SQL queries
-- Git and Github - Ver essential for version control and sahring my SQL scripts and Analysis, ensuring smooth collaboration and proper project tracking
+- **SQL**: The backbone of the analysis, allowing me to query the database and find critial insights
+- **PostgreSQL**: This is the chosen database management where all the queries where run
+- **Visual Studio Code** - My favorite database management and ececution of SQL queries
+- **Git and Github** - Ver essential for version control and sahring my SQL scripts and Analysis, ensuring smooth collaboration and proper project tracking
+
+
+ # The Analysis
+ ### 1. Top-Paying Data Analyst Jobs
+ This analysis explores the top-paying **Data Analyst** roles to highlight where the strongest career opportunities exist. 
+ By examining salaries, skills, and job demand, the goal is to reveal which positions offer the best value in today’s competitive data job market.
+
+ ```sql
+ SELECT
+    job_id,
+    job_title,
+    job_location,
+    job_schedule_type,
+    salary_year_avg,
+    job_posted_date,
+    name AS company_name
+FROM
+    job_postings_fact
+LEFT JOIN
+    company_dim USING (company_id)
+WHERE
+    job_title_short = 'Data Analyst'
+    AND job_location = 'Anywhere'
+    AND salary_year_avg IS NOT NULL
+ORDER BY
+    salary_year_avg DESC
+LIMIT 10
+```
+### 2. Skills Required for the Top Paying Jobs
+Understanding the skills required for the top-paying **Data Analyst** roles helps identify what employers value most in today’s job market. By highlighting the technical and analytical capabilities linked to higher salaries, this section clarifies which competencies are essential for maximizing career opportunities.
+
+```sql
+WITH top_paying_jobs AS (
+SELECT
+    job_id,
+    job_title,
+    salary_year_avg,
+    name AS company_name
+FROM
+    job_postings_fact
+LEFT JOIN company_dim USING (company_id)
+WHERE
+    job_title_short = 'Data Analyst' AND
+    job_location = 'Anywhere' AND
+    salary_year_avg IS NOT NULL
+ORDER BY
+    salary_year_avg DESC
+LIMIT 10
+)
+SELECT 
+    top_paying_jobs.*,
+    skills
+FROM top_paying_jobs
+INNER JOIN skills_job_dim USING (job_id)
+INNER JOIN skills_dim USING (skill_id)
+ORDER BY
+    salary_year_avg DESC
+    ```
+
  # What I Learned
+
  # Conclusions
