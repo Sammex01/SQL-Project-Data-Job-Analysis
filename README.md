@@ -110,7 +110,7 @@ SQL and Excel remain fundamental, emphasizing the need for strong foundational s
 Programming and Visualization Tools like Python, Tableau, and Power BI are essential, pointing towards the increasing importance of technical skills in data storytelling and decision support.
 
 ### 3. Top 10 Paying Companies
-
+This analysis highlights the top 10 companies offering the highest salaries for data analyst roles, helping professionals quickly see where the best compensation opportunities lie and make informed career decisions
 
 
 ```sql
@@ -144,8 +144,7 @@ LIMIT 10
 ![Top Companies](project_sql/Assets/3_path.png)
 The average salary breakdown shows a clear gap led by **Mantys**, which pays far above all other companies. Close followers like **ЛАНИТ**, **Torc Robotics**, and **Illuminate Mission Solutions** also offer strong compensation, reflecting high demand for advanced data talent. Major tech names such as **Google**, **OpenAI**, and **Anthropic** remain competitive but fall below the premium salaries of more specialized firms. Overall, the chart highlights how industry focus and technical complexity strongly influence pay levels.
 ### 4. Top 10 Paying Countries
-Average salaries vary widely across countries, with Belarus ($400k) and Russia ($292k) leading, followed by high-paying islands like the Bahamas ($201k). Developed markets such as the US ($126k), Canada ($123k), and Australia ($118k) offer competitive and reliable salaries, while emerging markets like India ($114k) and Brazil ($119k) provide moderate pay with growth opportunities. Targeting developed countries or high-paying niche markets can maximize both career opportunity and compensation.
-
+This analysis shows the top ten countries with the highest salaries for data analyst roles, giving a quick view of where compensation is most competitive globally.
 ```sql
 SELECT
     job_country,
@@ -162,9 +161,10 @@ ORDER BY
 
 ```
 ![Top Countries](project_sql/Assets/4_path.png)
-### 5. Optimal Skills
-This analysis highlights the most in-demand and highest-paying technical skills in today’s job market. **Python** and **Tableau** lead in demand, offering abundant opportunities, while **AWS**, **Azure**, **Snowflake**, and **Hadoop** provide a strong balance of high pay and solid demand. Niche skills like **Go** and **Confluence** offer top-tier salaries but appear less frequently. Overall, cloud platforms and big data tools are the most strategic choices for career growth, while popular languages remain reliable for plentiful roles.
+Average salaries vary widely across countries, with Belarus ($400k) and Russia ($292k) leading, followed by high-paying islands like the Bahamas ($201k). Developed markets such as the US ($126k), Canada ($123k), and Australia ($118k) offer competitive and reliable salaries, while emerging markets like India ($114k) and Brazil ($119k) provide moderate pay with growth opportunities. Targeting developed countries or high-paying niche markets can maximize both career opportunity and compensation.
 
+### 5. Optimal Skills
+This analysis highlights the most in-demand and highest-paying technical skills in today’s job market. 
 ```sql
 WITH skills_demand AS (
 SELECT 
@@ -199,11 +199,33 @@ LIMIT 25
 ![Optimal Skills](project_sql/Assets/Gemini_Generated_Image_ea02vgea02vgea02.png)
  **Python** and **Tableau** lead in demand, offering abundant opportunities, while **AWS**, **Azure**, **Snowflake**, and **Hadoop** provide a strong balance of high pay and solid demand. Niche skills like **Go** and **Confluence** offer top-tier salaries but appear less frequently. Overall, cloud platforms and big data tools are the most strategic choices for career growth, while popular languages remain reliable for plentiful roles.
 
-**Labels**
---
-#### **GO** - Vibrant Red | **Confluence** - Bright Orange | **Hadoop** - Golden Yellow  | **Snowflake** - Chartreuse Green | **Azure** - Lime Green | **Bigquery** - Emerald Green | **Aws** - Deep Cyan | **Java** - Sky Blue | **Ssis** - Medium Blue | **Jira** - Indigo | **Oracle** - Dark Violet | **Looker** - Purple | **Nosql** - Magenta | **Python** - Hot Pink | **R** - Rose Pink | **Redshift** - Crimson | **Qlik** - Ruby Red | **Tableau** - Maroon | **SSRS** - Brown-Red | **Spark** - Olive Drab | **C++** - Forest Green | **SAS** - Teal | **SQL server** - Dark Blue-Green | **Javascript** - Deep Purple-Red
 
 
 # Conclusion
-## Insights - 
+## Key Insights 📊
+
+- **Leadership pays:** Top-paying roles are often senior or specialized positions.
+- **Company matters:** Mantys, ЛАНИТ, and Torc Robotics lead in salaries.
+- **Location matters:** High-paying countries include Belarus, Russia, and the Bahamas.
+- **Skills matter:** Python, Tableau, and cloud platforms are linked to higher pay.
+
+### Top 5 Companies by Avg Salary
+| Company                  | Avg Salary (USD) |
+|--------------------------|----------------|
+| Mantys                   | 650,000        |
+| ЛАНИТ                     | 400,000        |
+| Torc Robotics            | 375,000        |
+| Illuminate Mission Sol.  | 375,000        |
+| Care.com                 | 350,000        |
+
+### Top 5 Countries by Avg Salary
+| Country      | Avg Salary (USD) |
+|-------------|----------------|
+| Belarus     | 400,000        |
+| Russia      | 292,500        |
+| Bahamas     | 201,512        |
+| Dominican R.| 157,500        |
+| Côte d'Ivoire| 147,500       |
+
 ## Closing Thoughts
+Exploring the data analyst job market shows that high pay comes from the right mix of role, company, and location. By understanding these trends, professionals can strategically plan their careers and focus on skills that truly drive opportunities in today’s data-driven world.
