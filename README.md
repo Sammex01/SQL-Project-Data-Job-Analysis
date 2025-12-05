@@ -47,6 +47,7 @@ ORDER BY
     salary_year_avg DESC
 LIMIT 10
 ```
+![Top Jobs](project_sql/Assets/1_part.png)
 
 Here's the breakdown of the top Data Analyst Roles in 2023
 
@@ -69,12 +70,10 @@ Here's the breakdown of the top Data Analyst Roles in 2023
 * Insight: Competitive pay but more clustered unless senior or specialized.
 
 
-![Top Jobs](https://drive.google.com/file/d/1PBWgsuwNo7UuIVrz9FXh9W3DXmeA1pna/view?usp=drive_link)
-
 Overall: **Leadership, specialization, and remote options are key factors for top pay in 2023.**
 
 ### 2. Skills Required for Top Paying Data Analyst Roles
-Understanding the skills required for the top-paying **Data Analyst** roles helps identify what employers value most in today’s job market. By highlighting the technical and analytical capabilities linked to higher salaries, this section clarifies which competencies are essential for maximizing career opportunities.
+This section focuses on the skills required for the top-paying **Data Analyst** roles which helps to identify what employers value most in today’s job market. By highlighting the technical and analytical capabilities linked to higher salaries, this section clarifies which competencies are essential for maximizing career opportunities.
 
 ```sql
 WITH top_paying_jobs AS (
@@ -104,10 +103,14 @@ ORDER BY
     salary_year_avg DESC
     
 ```
+Here's the breakdown of the most demanded skills for data analysts in 2023
+
 ![Top Demanded Skills](project_sql/Assets/2_path.png)
+SQL and Excel remain fundamental, emphasizing the need for strong foundational skills in data processing and spreadsheet manipulation.
+Programming and Visualization Tools like Python, Tableau, and Power BI are essential, pointing towards the increasing importance of technical skills in data storytelling and decision support.
 
 ### 3. Top 10 Paying Companies
-The average salary breakdown shows a clear gap led by **Mantys**, which pays far above all other companies. Close followers like **ЛАНИТ**, **Torc Robotics**, and **Illuminate Mission Solutions** also offer strong compensation, reflecting high demand for advanced data talent. Major tech names such as **Google**, **OpenAI**, and **Anthropic** remain competitive but fall below the premium salaries of more specialized firms. Overall, the chart highlights how industry focus and technical complexity strongly influence pay levels.
+
 
 
 ```sql
@@ -138,7 +141,8 @@ ORDER BY
     avg_salary DESC
 LIMIT 10
 ```
-![Top Companies](project_sql\Assets\3_path.png)
+![Top Companies](project_sql/Assets/3_path.png)
+The average salary breakdown shows a clear gap led by **Mantys**, which pays far above all other companies. Close followers like **ЛАНИТ**, **Torc Robotics**, and **Illuminate Mission Solutions** also offer strong compensation, reflecting high demand for advanced data talent. Major tech names such as **Google**, **OpenAI**, and **Anthropic** remain competitive but fall below the premium salaries of more specialized firms. Overall, the chart highlights how industry focus and technical complexity strongly influence pay levels.
 ### 4. Top 10 Paying Countries
 Average salaries vary widely across countries, with Belarus ($400k) and Russia ($292k) leading, followed by high-paying islands like the Bahamas ($201k). Developed markets such as the US ($126k), Canada ($123k), and Australia ($118k) offer competitive and reliable salaries, while emerging markets like India ($114k) and Brazil ($119k) provide moderate pay with growth opportunities. Targeting developed countries or high-paying niche markets can maximize both career opportunity and compensation.
 
@@ -157,7 +161,7 @@ ORDER BY
     avg_salary DESC
 
 ```
-![Top Countries](project_sql\Assets\4_path.png)
+![Top Countries](project_sql/Assets/4_path.png)
 ### 5. Optimal Skills
 This analysis highlights the most in-demand and highest-paying technical skills in today’s job market. **Python** and **Tableau** lead in demand, offering abundant opportunities, while **AWS**, **Azure**, **Snowflake**, and **Hadoop** provide a strong balance of high pay and solid demand. Niche skills like **Go** and **Confluence** offer top-tier salaries but appear less frequently. Overall, cloud platforms and big data tools are the most strategic choices for career growth, while popular languages remain reliable for plentiful roles.
 
@@ -191,6 +195,7 @@ ORDER BY
         demand_count DESC
 LIMIT 25
 ```
+![Optimal Skills](project_sql/Assets/5_part.png)
 
 **Labels**
 --
