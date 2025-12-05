@@ -69,7 +69,7 @@ Here's the breakdown of the top Data Analyst Roles in 2023
 * Insight: Competitive pay but more clustered unless senior or specialized.
 
 
-![Top Jobs](project_sql\Assets\1_part.png)
+![Top Jobs](https://drive.google.com/file/d/1PBWgsuwNo7UuIVrz9FXh9W3DXmeA1pna/view?usp=drive_link)
 
 Overall: **Leadership, specialization, and remote options are key factors for top pay in 2023.**
 
