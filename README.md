@@ -68,7 +68,7 @@ Here's the breakdown of the top Data Analyst Roles in 2023
 * Salaries **$138K–$165K**, common for general remote analysts.
 * Insight: Competitive pay but more clustered unless senior or specialized.
 
-![Top Paying Roles](project_sql\Assets\top_jobs.png)
+![Top Paying Roles](project_sql/Assets/top_jobs.png)
 
 
 Overall: **Leadership, specialization, and remote options are key factors for top pay in 2023.**
