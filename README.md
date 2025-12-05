@@ -197,6 +197,8 @@ LIMIT 25
 ```
 ![Optimal Skills](project_sql/Assets/5_part.png)
 
+ **Python** and **Tableau** lead in demand, offering abundant opportunities, while **AWS**, **Azure**, **Snowflake**, and **Hadoop** provide a strong balance of high pay and solid demand. Niche skills like **Go** and **Confluence** offer top-tier salaries but appear less frequently. Overall, cloud platforms and big data tools are the most strategic choices for career growth, while popular languages remain reliable for plentiful roles.
+
 **Labels**
 --
 #### **GO** - Vibrant Red | **Confluence** - Bright Orange | **Hadoop** - Golden Yellow  | **Snowflake** - Chartreuse Green | **Azure** - Lime Green | **Bigquery** - Emerald Green | **Aws** - Deep Cyan | **Java** - Sky Blue | **Ssis** - Medium Blue | **Jira** - Indigo | **Oracle** - Dark Violet | **Looker** - Purple | **Nosql** - Magenta | **Python** - Hot Pink | **R** - Rose Pink | **Redshift** - Crimson | **Qlik** - Ruby Red | **Tableau** - Maroon | **SSRS** - Brown-Red | **Spark** - Olive Drab | **C++** - Forest Green | **SAS** - Teal | **SQL server** - Dark Blue-Green | **Javascript** - Deep Purple-Red
