@@ -196,7 +196,7 @@ ORDER BY
 LIMIT 25
 ```
 ![Optimal Skills](project_sql/Assets/5_part.png)
-
+![Optimal Skills](project_sql/Assets/Gemini_Generated_Image_ea02vgea02vgea02.png)
  **Python** and **Tableau** lead in demand, offering abundant opportunities, while **AWS**, **Azure**, **Snowflake**, and **Hadoop** provide a strong balance of high pay and solid demand. Niche skills like **Go** and **Confluence** offer top-tier salaries but appear less frequently. Overall, cloud platforms and big data tools are the most strategic choices for career growth, while popular languages remain reliable for plentiful roles.
 
 **Labels**
