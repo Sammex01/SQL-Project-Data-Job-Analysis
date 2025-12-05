@@ -1,33 +1,60 @@
- # Introduction
- 📊Explore the world of data careers! 
-This project takes a closer look at data analyst roles—highlighting top-paying🫰 positions, the most in-demand📈 skills, and where strong demand meets high salaries in the data analytics field. 🚀
+# 📊 Data Analyst Job Market Analysis
 
-🔎Searching for SQL Queries, find them here: [project_sql folder](/project_sql/)
- # Background
- With the data industry growing so quickly, I’ve always been curious about what truly shapes the job market for data analysts. Everywhere you look, companies are relying on data to guide major decisions, but the roles, required skills, and salaries seem to vary a lot.
+![SQL Badge](https://img.shields.io/badge/SQL-PostgreSQL-blue)
+![Python Badge](https://img.shields.io/badge/Python-3.11-yellow)
+![GitHub Badge](https://img.shields.io/badge/GitHub-Version%20Control-black)
 
-This project is my way of exploring that landscape—digging into job postings to find out which data analyst roles pay the most, what skills employers are asking for, and where strong demand meets great opportunities. It’s a simple, focused look at what it really takes to thrive in today’s data analytics field.
+---
 
-## The Five Questions This Analysis Aims To Solve
-1. What are the top-paying Data Analyst jobs?
-2. What skills are required for these top-paying jobs?
-3. What sills are most in demand for data analysts?
-4. Whish Skills Are Associated with higher  salaries?
-5. What are the most optimal skills to learn
+## TL;DR ⚡  
+This project explores the **data analyst job market in 2023**, highlighting:  
+- 💰 Top-paying roles and leadership positions  
+- 🏢 Highest-paying companies and 🌍 countries  
+- 📈 Most in-demand and highest-paying skills  
+- 🚀 Insights to guide career planning and skill development  
 
- # Tools I Used
-During my analysis of the data Analyst  job market, I made use of several tools such as
-- **SQL**: The backbone of the analysis, allowing me to query the database and find critial insights
-- **PostgreSQL**: This is the chosen database management where all the queries where run
-- **Visual Studio Code** - My favorite database management and ececution of SQL queries
-- **Git and Github** - Ver essential for version control and sahring my SQL scripts and Analysis, ensuring smooth collaboration and proper project tracking
+---
 
+## Introduction
+Explore the world of data careers! This project examines **Data Analyst** roles—highlighting top-paying positions, the most in-demand skills, and where strong demand meets high salaries.  
 
- #  Analysis of Data Analyst Roles
- ### 1. Top-Paying Remote Data Analyst Jobs
-This analysis examines the top-paying remote **Data Analyst** roles in 2023 to identify where the strongest earning opportunities exist. The goal is to help professionals understand which positions and career paths offer the highest value in today’s competitive data job landscape. 
- ```sql
- SELECT
+🔎 **SQL Queries:** Find them here: [project_sql folder](/project_sql/)
+
+---
+
+## Background
+The data industry is growing rapidly, with companies relying on analytics to drive decisions. Roles, required skills, and salaries vary widely.  
+
+This project digs into job postings to identify:  
+- Top-paying roles  
+- Skills employers value most  
+- Companies and countries offering the best opportunities  
+
+---
+
+## Five Key Questions ❓
+1. What are the top-paying Data Analyst jobs?  
+2. What skills are required for these top-paying jobs?  
+3. Which skills are most in demand for data analysts?  
+4. Which skills are associated with higher salaries?  
+5. What are the most optimal skills to learn?
+
+---
+
+## Tools Used 🛠️
+- **SQL** – Querying and analyzing the data  
+- **PostgreSQL** – Database management  
+- **Visual Studio Code** – Query execution and organization  
+- **Git & GitHub** – Version control and sharing  
+
+---
+
+## Analysis Highlights 📊
+
+### 1. Top-Paying Remote Data Analyst Jobs 💼
+Identifies the highest-earning remote Data Analyst roles in 2023.
+```sql
+SELECT
     job_id,
     job_title,
     job_location,
@@ -35,46 +62,25 @@ This analysis examines the top-paying remote **Data Analyst** roles in 2023 to i
     salary_year_avg,
     job_posted_date,
     name AS company_name
-FROM
-    job_postings_fact
-LEFT JOIN
-    company_dim USING (company_id)
-WHERE
-    job_title_short = 'Data Analyst'
+FROM job_postings_fact
+LEFT JOIN company_dim USING (company_id)
+WHERE job_title_short = 'Data Analyst'
     AND job_location = 'Anywhere'
     AND salary_year_avg IS NOT NULL
-ORDER BY
-    salary_year_avg DESC
-LIMIT 10
+ORDER BY salary_year_avg DESC
+LIMIT 10 
 ```
 ![Top Jobs](project_sql/Assets/1_part.png)
 
-Here's the breakdown of the top Data Analyst Roles in 2023
-
+**Insights:**  
+- 🏆 Leadership roles pay the most (e.g., Mantys – 650K USD)  
+- 🔹 Specialized roles and remote flexibility increase earnings  
+- 📊 Standard analyst roles cluster around moderate salaries (138K–165K USD)  
 
 ---
 
-**1. Top Leadership Roles**
-
-* Salaries **$250K+**, led by **Data Analyst** at Mantys (650K USD) and **Director of Analytics** at Meta (336.5K USD).
-* Insight: Seniority and leadership drive the highest pay.
-
- **2. Mid-Level & Specialized Roles**
-
-* Salaries **$150K–$232K**, e.g., **Data Analyst, Marketing** at Pinterest (232K USD) and **Principal Data Analyst** at SmartAsset (205K USD).
-* Insight: Specialization and remote flexibility boost earnings.
-
- **3. Standard Analyst Roles**
-
-* Salaries **$138K–$165K**, common for general remote analysts.
-* Insight: Competitive pay but more clustered unless senior or specialized.
-
-
-Overall: **Leadership, specialization, and remote options are key factors for top pay in 2023.**
-
-### 2. Skills Required for Top Paying Data Analyst Roles
-This section focuses on the skills required for the top-paying **Data Analyst** roles which helps to identify what employers value most in today’s job market. By highlighting the technical and analytical capabilities linked to higher salaries, this section clarifies which competencies are essential for maximizing career opportunities.
-
+### 2. Skills Required for Top-Paying Roles 🧰
+This section focuses on the skills required for the top-paying **Data Analyst** roles which helps to identify what employers value most in today’s job market.
 ```sql
 WITH top_paying_jobs AS (
 SELECT
@@ -101,16 +107,17 @@ INNER JOIN skills_job_dim USING (job_id)
 INNER JOIN skills_dim USING (skill_id)
 ORDER BY
     salary_year_avg DESC
-    
 ```
-Here's the breakdown of the most demanded skills for data analysts in 2023
-
 ![Top Demanded Skills](project_sql/Assets/2_path.png)
-SQL and Excel remain fundamental, emphasizing the need for strong foundational skills in data processing and spreadsheet manipulation.
-Programming and Visualization Tools like Python, Tableau, and Power BI are essential, pointing towards the increasing importance of technical skills in data storytelling and decision support.
 
-### 3. Top 10 Paying Companies
-This analysis highlights the top 10 companies offering the highest salaries for data analyst roles, helping professionals quickly see where the best compensation opportunities lie and make informed career decisions
+**Insights:**  
+- SQL and Excel remain foundational  
+- Python, Tableau, and Power BI are essential for analysis and visualization  
+
+---
+
+### 3. Top 10 Companies by Average Salary 🏢
+This analysis highlights the top 10 companies offering the highest salaries for data analyst roles, helping professionals quickly see where the best compensation opportunities lie and make informed career decisions.
 
 
 ```sql
@@ -141,9 +148,17 @@ ORDER BY
     avg_salary DESC
 LIMIT 10
 ```
+
+
 ![Top Companies](project_sql/Assets/3_path.png)
-The average salary breakdown shows a clear gap led by **Mantys**, which pays far above all other companies. Close followers like **ЛАНИТ**, **Torc Robotics**, and **Illuminate Mission Solutions** also offer strong compensation, reflecting high demand for advanced data talent. Major tech names such as **Google**, **OpenAI**, and **Anthropic** remain competitive but fall below the premium salaries of more specialized firms. Overall, the chart highlights how industry focus and technical complexity strongly influence pay levels.
-### 4. Top 10 Paying Countries
+
+**Insights:**  
+- Mantys, ЛАНИТ, and Torc Robotics lead in pay  
+- Specialized firms often outpace major tech companies in compensation  
+
+---
+
+### 4. Top 10 Countries by Average Salary 🌍
 This analysis shows the top ten countries with the highest salaries for data analyst roles, giving a quick view of where compensation is most competitive globally.
 ```sql
 SELECT
@@ -161,9 +176,14 @@ ORDER BY
 
 ```
 ![Top Countries](project_sql/Assets/4_path.png)
-Average salaries vary widely across countries, with Belarus ($400k) and Russia ($292k) leading, followed by high-paying islands like the Bahamas ($201k). Developed markets such as the US ($126k), Canada ($123k), and Australia ($118k) offer competitive and reliable salaries, while emerging markets like India ($114k) and Brazil ($119k) provide moderate pay with growth opportunities. Targeting developed countries or high-paying niche markets can maximize both career opportunity and compensation.
 
-### 5. Optimal Skills
+**Insights:**  
+- Belarus, Russia, and the Bahamas top the salary chart  
+- Developed markets (US, Canada, Australia) offer competitive and reliable pay  
+
+---
+
+### 5. Optimal Skills 💻
 This analysis highlights the most in-demand and highest-paying technical skills in today’s job market. 
 ```sql
 WITH skills_demand AS (
@@ -197,35 +217,35 @@ LIMIT 25
 ```
 ![Optimal Skills](project_sql/Assets/5_part.png)
 ![Optimal Skills](project_sql/Assets/Gemini_Generated_Image_ea02vgea02vgea02.png)
- **Python** and **Tableau** lead in demand, offering abundant opportunities, while **AWS**, **Azure**, **Snowflake**, and **Hadoop** provide a strong balance of high pay and solid demand. Niche skills like **Go** and **Confluence** offer top-tier salaries but appear less frequently. Overall, cloud platforms and big data tools are the most strategic choices for career growth, while popular languages remain reliable for plentiful roles.
+
+**Insights:**  
+- Python and Tableau dominate in demand  
+- Cloud platforms and big data tools offer high pay  
+- Niche skills like Go and Confluence yield top-tier salaries  
+
+---
+
+## Key Insights Table 📋
+
+| Top Companies        | Avg Salary (USD) | Top Countries       | Avg Salary (USD) |
+|---------------------|----------------|-------------------|----------------|
+| Mantys              | 650,000        | Belarus           | 400,000        |
+| ЛАНИТ                | 400,000        | Russia            | 292,500        |
+| Torc Robotics       | 375,000        | Bahamas           | 201,512        |
+| Illuminate Mission S.| 375,000       | Dominican Rep.    | 157,500        |
+| Care.com            | 350,000        | Côte d'Ivoire     | 147,500        |
+
+---
+
+## Data Assumptions & Notes 📝
+- Based on **2023 job postings**  
+- Salaries reported in **USD**; no conversion applied  
+- Only roles labeled **“Data Analyst”** with non-null salaries included  
+- Outliers kept as-is for transparency  
+
+---
+
+## Closing Thought 💡
+High pay in data analytics comes from the right mix of **role, company, and location**. Understanding these trends helps professionals strategically plan careers and focus on skills that drive the best opportunities.
 
 
-
-# Conclusion
-## Key Insights 📊
-
-- **Leadership pays:** Top-paying roles are often senior or specialized positions.
-- **Company matters:** Mantys, ЛАНИТ, and Torc Robotics lead in salaries.
-- **Location matters:** High-paying countries include Belarus, Russia, and the Bahamas.
-- **Skills matter:** Python, Tableau, and cloud platforms are linked to higher pay.
-
-### Top 5 Companies by Avg Salary
-| Company                  | Avg Salary (USD) |
-|--------------------------|----------------|
-| Mantys                   | 650,000        |
-| ЛАНИТ                     | 400,000        |
-| Torc Robotics            | 375,000        |
-| Illuminate Mission Sol.  | 375,000        |
-| Care.com                 | 350,000        |
-
-### Top 5 Countries by Avg Salary
-| Country      | Avg Salary (USD) |
-|-------------|----------------|
-| Belarus     | 400,000        |
-| Russia      | 292,500        |
-| Bahamas     | 201,512        |
-| Dominican R.| 157,500        |
-| Côte d'Ivoire| 147,500       |
-
-## Closing Thoughts
-Exploring the data analyst job market shows that high pay comes from the right mix of role, company, and location. By understanding these trends, professionals can strategically plan their careers and focus on skills that truly drive opportunities in today’s data-driven world.
