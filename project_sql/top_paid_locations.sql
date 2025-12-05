@@ -10,3 +10,4 @@ GROUP BY
     job_country
 ORDER BY
     avg_salary DESC
+LIMIT 10

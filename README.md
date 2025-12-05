@@ -25,7 +25,7 @@ During my analysis of the data Analyst  job market, I made use of several tools 
 
  #  Analysis of Data Analyst Roles
  ### 1. Top-Paying Remote Data Analyst Jobs
-This analysis highlights the top-paying remote Data Analyst roles in 2023 to reveal where the strongest earning opportunities exist. Leading the list is **Data Analyst** at Mantys (650,000 USD), followed by **Director of Analytics** at Meta (336,500 USD) and **Associate Director** – Data Insights at AT&T (255,830 USD). Other roles, including **Data Analyst**, **Marketing at Pinterest** and **Principal Data Analyst** at SmartAsset, offer salaries above 200,000 USD. 
+This analysis examines the top-paying remote **Data Analyst** roles in 2023 to identify where the strongest earning opportunities exist. The goal is to help professionals understand which positions and career paths offer the highest value in today’s competitive data job landscape. 
  ```sql
  SELECT
     job_id,
@@ -47,6 +47,30 @@ ORDER BY
     salary_year_avg DESC
 LIMIT 10
 ```
+
+Here's the breakdown of the top Data Analyst Roles in 2023
+
+
+---
+
+**1. Top Leadership Roles**
+
+* Salaries **$250K+**, led by **Data Analyst** at Mantys (650K USD) and **Director of Analytics** at Meta (336.5K USD).
+* Insight: Seniority and leadership drive the highest pay.
+
+ **2. Mid-Level & Specialized Roles**
+
+* Salaries **$150K–$232K**, e.g., **Data Analyst, Marketing** at Pinterest (232K USD) and **Principal Data Analyst** at SmartAsset (205K USD).
+* Insight: Specialization and remote flexibility boost earnings.
+
+ **3. Standard Analyst Roles**
+
+* Salaries **$138K–$165K**, common for general remote analysts.
+* Insight: Competitive pay but more clustered unless senior or specialized.
+
+
+Overall: **Leadership, specialization, and remote options are key factors for top pay in 2023.**
+
 ### 2. Skills Required for Top Paying Data Analyst Roles
 Understanding the skills required for the top-paying **Data Analyst** roles helps identify what employers value most in today’s job market. By highlighting the technical and analytical capabilities linked to higher salaries, this section clarifies which competencies are essential for maximizing career opportunities.
 
@@ -163,3 +187,6 @@ ORDER BY
         demand_count DESC
 LIMIT 25
 ```
+
+# What I learned
+# Conclusion
