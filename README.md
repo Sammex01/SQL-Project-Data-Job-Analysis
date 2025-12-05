@@ -198,5 +198,5 @@ LIMIT 25
 
 
 # Conclusion
-## Insights
+## Insights - 
 ## Closing Thoughts
